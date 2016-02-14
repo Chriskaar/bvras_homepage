@@ -1,0 +1,24 @@
+nn: 
+  language: ''
+  newsfeed: 'Nyheter'
+  menu:
+    home: 'Hjem'
+    articles: 'Artikler'
+    about_us: 'Om oss'
+    contact_us: 'Kontakt oss'
+    login: 'Logg inn'
+    logout: 'Logg ut'
+  
+  sessions: 
+    sign_in_title: 'Logg inn'
+    please_sign_in: 'Logg in med dine detaljer'
+    forgot_password: 'Glemt passord?'
+    create_account: 'Lag en ny bruker'
+
+    label:
+      email: 'E-post'
+      password: 'Passord'
+
+    button:
+      sign_in: 'Logg inn'
+      sign_out: 'Logg ut'

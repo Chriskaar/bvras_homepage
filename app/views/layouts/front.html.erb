@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<header>
+	<nav class="hor-nav">
+		<ul>
+			<li><%= link_to t('menu.home'), root_path, class: current_page?(root_path) ? 'active' : 'test' %></li>
+			<li><%= link_to t('menu.articles'), root_path  %></li>
+			<li><a href=""><%=t ('menu.about_us') %></a></li>
+			<li><a href=""><%=t ('menu.contact_us') %></a></li>
+			
+			<li class="right-menu"><%= link_to 'English', url_for(:locale => 'en')  %></li>
+			<li class="right-menu"><%= link_to 'Norsk', url_for(:locale => 'nn')  %></li>
+
+			<li class="right-menu">
+			<% if !current_user %>
+			  <%= link_to t('menu.login'), new_user_session_path %>
+			<% else %>
+			  <%= link_to t('menu.logout', destroy_user_session_path, :method => :delete) %>
+			<% end %>
+			</li>
+
+
+		</ul>
+	</nav>
+</header>
+<body style="background-color:#D6D6D6;">
+
+<%= yield %>
+
+
+</body>
+</html>

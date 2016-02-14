@@ -20,4 +20,27 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  language: 'English'
   hello: "Hello world"
+  newsfeed: 'Newsfeed'
+  menu:
+    home: 'Home'
+    articles: 'Articles'
+    about_us: 'About us'
+    contact_us: 'Contact us'
+    login: 'Sign in'
+    logout: 'Log out'
+
+  sessions:
+    sign_in_title: 'Sign in'
+    please_sign_in: 'Please sign in'
+    forgot_password: 'Forgot your password?'
+    create_account: 'Create an account'
+
+    label:
+      email: 'Email'
+      password: 'Password'
+
+    button:
+      sign_in: 'Sign in'
+      sign_out: 'Sign out'
