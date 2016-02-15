@@ -1,0 +1,10 @@
+development:
+  app_id: 12345
+  secret: abcdef
+
+test:
+  <<: *development
+
+production:
+  app_id: 23456
+  secret: bcdefg
