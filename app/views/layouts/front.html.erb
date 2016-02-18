@@ -1,33 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= @title %></title>
+  <%= display_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  
 </head>
 <header>
-	<nav class="hor-nav">
-		<ul>
-			<li><%= link_to t('menu.home'), root_path, class: current_page?(root_path) ? 'active' : 'test' %></li>
-			<li><%= link_to t('menu.articles'), root_path  %></li>
-			<li><a href=""><%=t ('menu.about_us') %></a></li>
-			<li><a href=""><%=t ('menu.contact_us') %></a></li>
-			
-			<li class="right-menu"><%= link_to 'English', url_for(:locale => 'en')  %></li>
-			<li class="right-menu"><%= link_to 'Norsk', url_for(:locale => 'nn')  %></li>
-
-			<li class="right-menu">
-			<% if !current_user %>
-			  <%= link_to t('menu.login'), new_user_session_path %>
-			<% else %>
-			  <%= link_to t('menu.logout', destroy_user_session_path, :method => :delete) %>
-			<% end %>
-			</li>
+	<div class="header-menu">
+		<div class="logo-box logo-box-effect">
+			<img src="<%= asset_url('logo.png') %>" alt="<%= site_setting?('site_name') %>" class="logo" />
+		</div>
+		<nav class="hor-nav" style="">
+			<ul class="hor-ul">
+				<li><%= link_to t('menu.home'), root_path, class: current_page?(root_path) ? 'active' : '' %></li>
+				<li><%= link_to t('menu.articles'), articles_path, class: current_page?(articles_path) ? 'active' : ''  %></li>
+				<li><%= link_to t('menu.about_us'), page_path('about'), class: current_page?(page_path('about')) ? 'active' : '' %></li>
+				<li><%= link_to t('menu.contact_us'), contact_path, class: current_page?(contact_path) ? 'active' : '' %></li>
+				<% if admin? %>
+					<li class="right-menu"><%= link_to 'Admin', admin_path %></li>
+				<% end %>
 
 
-		</ul>
-	</nav>
+
+			</ul>
+		</nav>
+		<nav class="second-hor-nav">
+			<div class="dropdown sign_in-menu">
+			  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			    <%= t('sessions.sign_in_title') %>
+			    <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+			  	<% if !current_user %>
+			    	<li><%= link_to t('sessions.sign_in_title'), new_user_session_path %></li>
+			    <% else %>
+			    	<li><%= link_to t('sessions.sign_out_title'), destroy_user_session_path, :method => :delete %></li>
+			    <% end %>
+				<li class=""><%= link_to 'English', url_for(:locale => 'en')  %></li>
+				<li class=""><%= link_to 'Norsk', url_for(:locale => 'nn')  %></li>
+			    <% if admin? %>
+			    	<li role="separator" class="divider"></li>
+			   		<li><%= link_to 'Admin', admin_path %></li>
+			   	<% end %>
+			  </ul>
+			</div>
+		</nav>
+	</div>
+
 </header>
 <body style="background-color:#D6D6D6;">
 

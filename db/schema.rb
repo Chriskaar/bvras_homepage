@@ -11,7 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160214210806) do
+ActiveRecord::Schema.define(version: 20160218222755) do
+
+  create_table "articles", force: true do |t|
+    t.string   "name"
+    t.string   "permalink"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "page_translations", force: true do |t|
+    t.integer  "page_id",    null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.text     "content"
+  end
+
+  add_index "page_translations", ["locale"], name: "index_page_translations_on_locale"
+  add_index "page_translations", ["page_id"], name: "index_page_translations_on_page_id"
+
+  create_table "pages", force: true do |t|
+    t.string   "name"
+    t.string   "permalink"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posts", force: true do |t|
     t.string   "name"
@@ -20,6 +48,21 @@ ActiveRecord::Schema.define(version: 20160214210806) do
     t.integer  "user"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "settings", force: true do |t|
+    t.string   "site_name"
+    t.string   "contact_phone"
+    t.string   "contact_mobile"
+    t.string   "contact_adress"
+    t.string   "contact_postal"
+    t.string   "contact_postcode"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "site_description"
+    t.string   "google_profile"
+    t.string   "facebook_profile"
+    t.string   "theme_color"
   end
 
   create_table "users", force: true do |t|

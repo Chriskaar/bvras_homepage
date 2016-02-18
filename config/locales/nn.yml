@@ -1,4 +1,11 @@
-nn: 
+nn:
+  site_meta:
+    home:
+      title: 'Hjem'
+      description: ''
+    articles:
+      title: 'Artikler'
+      description: 'Artikler'
   language: ''
   newsfeed: 'Nyheter'
   menu:
@@ -6,14 +13,18 @@ nn:
     articles: 'Artikler'
     about_us: 'Om oss'
     contact_us: 'Kontakt oss'
-    login: 'Logg inn'
-    logout: 'Logg ut'
-  
+  page:
+    contact:
+      title: 'Kontakt oss'
+      under_title: 'Så hjelper vi deg innen kort tid!'
   sessions: 
     sign_in_title: 'Logg inn'
+    sign_out_title: 'Logg ut'
     please_sign_in: 'Logg in med dine detaljer'
     forgot_password: 'Glemt passord?'
     create_account: 'Lag en ny bruker'
+    notice:
+      sign_out: 'Du er nå logget ut'
 
     label:
       email: 'E-post'

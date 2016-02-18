@@ -1,16 +1,21 @@
-<div>a</div>
+
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+<% end -%>
+
 <div class="container">
 	<div class="row">
 		<div class="col-sm-4">
-			<div style="border:1px solid red;">
+			<div class="newsfeed-container">
 				<h4><%= t('newsfeed') %></h4>
-				<h4><%= APP_SETTINGS['app_id'] %></h4>
+
 
 			</div>
 		</div>
 		<div class="col-sm-8">
-			<div style="border:1px solid red;">
+			<div style="">
 				Slider here.
+
 			</div>
 		</div>
 	</div>

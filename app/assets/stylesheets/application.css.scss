@@ -2,135 +2,24 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-
 @import url('https://fonts.googleapis.com/css?family=Exo+2');
 
+
+
+
+
 .container {
-	margin-top:55px;
+	margin-top:125px;
 }
-.facebook-btn {
-	background-color: #354C8C;
-	color: white;
-	font-weight: 700;
-	padding: 12px;
-	width: 100%;
-	&:hover {
-		background-color: #41599C;
-		text-decoration: none;
-		color: white;
-	}
-}
-
-.left-icon-padding {
-	padding-right:10px
-}
-
-
-.middle-container {
-	background-color:white;
-	margin:auto;
-	width:450px;
-	min-height:400px;
-	margin-top:100px;
-	border:1px solid white;
-	border-radius:20px;
-
-}
-
-.login-title-container {
-	text-align:center;
-	margin:auto;
-	padding:5px;
-	margin:0;
-	margin-top:50px;
-}
-
-.login-input-container {
-	text-align:center;
-	margin:auto;
-	margin:0;
-	margin-top:50px;
-}
-
-.login-title {
-	font-family: 'Exo 2';
-	font-weight:700;
-	font-size:22;
-}
-
-#login-input {
-	font-family: 'Exo 2';
-	padding:0;
-	margin:0;
-	padding-left:15px;
-	height:50px;
-	width:60%;
-	font-size:20px;
-	color: black;
-	border:none;
-	background-color:#C9C9C9;
-}
-.login-label {
-	font-family: 'Exo 2';
-	text-align:left;
-	width:20%;
-	font-weight:700;
-	font-size:15px;
-	padding:10px;
-	padding-left:0;
-	margin:0;
-	left:0;
-}
-.login-form-group {
-	border-top:1px solid #9C9C9C;
-	border-bottom:1px solid #9C9C9C;
-	background-color:#C9C9C9;
-}
-#login-input:focus{
-	background-color: #9BA1A3;
-}
-
-.login-btn {
-	font-family: 'Exo 2';
-	font-weight:100;
-	font-size:18px;
-	padding:10px;
+.cs-container {
 	border-radius:5px;
-	display:block;
-	text-align:center;
-	cursor:pointer;
-	background-color: #086A9E;
-	width:100%;
-	margin-top:10px;
+	background-color:white;
+	padding: 20px;
+	-webkit-box-shadow: 2px 3px 7px -1px rgba(0,0,0,0.63);
+	-moz-box-shadow: 2px 3px 7px -1px rgba(0,0,0,0.63);
+	box-shadow: 2px 3px 7px -1px rgba(0,0,0,0.63);
 }
-.login-btn:hover {
-	background-color: #0A83C4;
-}
-.login-forgotRegister-container {
-	margin-top:10px;
-	padding:10px;
-	text-align:center;
-	color: #ADADAD;
-	font-style: italic;
-	cursor:pointer;
-}
-.login-forgot:hover {
-	color: #949494;
-}
-.login-new:hover {
-	color: #949494;
-}
-.login-social-container {
-	text-align:left;
-	margin-top:10px;
-	padding:10px;
-}
-.login-social:hover {
-	color: #5C5C5C;
-}
-.login-social {
-	cursor:pointer;
-}
+
 
 .mt10{margin-top:10px}.mt20{margin-top:20px}
 

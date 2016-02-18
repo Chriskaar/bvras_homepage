@@ -13,12 +13,12 @@
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="login-form-group">
         <%= f.label t('sessions.label.email'), class: 'login-label' %>
-        <%= f.email_field :email, autofocus: true, id: 'login-input' %>
+        <%= f.email_field :email, autofocus: true, id: 'login-input', required: true %>
       </div>
 
       <div class="login-form-group">
         <%= f.label t('sessions.label.password'), class: 'login-label' %>
-        <%= f.password_field :password, autocomplete: "off", id: 'login-input' %>
+        <%= f.password_field :password, autocomplete: "off", id: 'login-input', required: true %>
       </div>
 
   <!--     <% if devise_mapping.rememberable? -%>
@@ -31,7 +31,7 @@
       <%- if devise_mapping.omniauthable? %>
         <%- resource_class.omniauth_providers.each do |provider| %>
 
-          <%= link_to raw("<span class='login-social fa fa-#{provider}-square fa-3x'></span>"), omniauth_authorize_path(resource_name, provider) %>
+          <%= link_to raw("<span class='login-social fa fa-#{provider} fa-3x'></span>"), omniauth_authorize_path(resource_name, provider) %>
         <% end -%>
       <% end -%>
     </div>

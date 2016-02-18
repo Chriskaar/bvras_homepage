@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # Authentication
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'omniauth-dropbox'
 
 # Style
 gem 'font-awesome-rails'
@@ -14,6 +15,8 @@ gem 'sass'
 gem 'globalize', '~> 4.0.0'
 gem 'routing-filter'
 
+# SEO
+gem 'meta-tags'
 
 # Other
 gem 'rails', '4.1.8'

@@ -15,4 +15,5 @@ Devise.setup do |config|
   config.sign_out_via = :delete
 
   config.omniauth :facebook, "941786045918043", "ce79a5837bf40d24437cef68f87d0764"
+  config.omniauth :dropbox, "yb2hakxfqcf3grf", "wece4wwhccgajpr"
 end

@@ -1,0 +1,66 @@
+// Place all the styles related to the contact controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+$orange: #ff5000;
+.banner-title {
+	font-family: 'Exo 2';
+	font-weight: '700';
+	font-size: 40px;
+}
+.banner-under-title {
+	font-family: 'Exo 2';
+	font-weight:100;
+	font-size: 18px;
+}
+.banner {
+	margin:auto;
+    width:auto;
+    height:150px;
+    background:$orange;
+    position:relative;
+    padding:20px;
+    box-sizing: border-box; 
+    margin-bottom:30px
+}
+.banner-left-edge {
+    background:$orange;
+    position:absolute;
+    width:40px;
+    height:100%;
+    left:-40px;
+    top:0;
+}
+/* Triangle left */
+ .banner-left-edge:after {
+    width:0;
+    height:0;
+    border-left:20px solid transparent;
+    border-right:0 solid transparent;
+    border-top:20px solid #777777;
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-20px;
+}
+.banner-right-edge {
+    background:$orange;
+    position:absolute;
+    width:40px;
+    height:100%;
+    right:-40px;
+    top:0;
+}
+/* Triangle right */
+ .banner-right-edge:after {
+    width:0;
+    height:0;
+    border-left:0 solid transparent;
+    border-right:20px solid transparent;
+    border-top:20px solid #777777;
+    content:"";
+    position:absolute;
+    right:0;
+    bottom:-20px;
+}
