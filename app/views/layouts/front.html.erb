@@ -39,6 +39,7 @@
 			    <% else %>
 			    	<li><%= link_to t('sessions.sign_out_title'), destroy_user_session_path, :method => :delete %></li>
 			    <% end %>
+			    	<li role="separator" class="divider"></li>
 				<li class=""><%= link_to 'English', url_for(:locale => 'en')  %></li>
 				<li class=""><%= link_to 'Norsk', url_for(:locale => 'nn')  %></li>
 			    <% if admin? %>
@@ -58,44 +59,55 @@
 
 </body>
 <footer class="front-footer" style="bottom:0;"> 
-	<div class="row">
-		<div class="col-sm-2">
-			<div class="footer-social-container">
-				<div class="footer-social-icon">
-					<% if site_setting?('facebook') %>
-						<% icon = fa_icon 'facebook 3x' %>
-						<%= link_to icon, site_setting?('facebook') %> 
-					<% end %>
-				</div>
-				<div class="footer-social-icon">
-					<% if site_setting?('twitter') %>
-						<% icon = fa_icon 'twitter 3x' %>
-						<%= link_to icon, site_setting?('twitter') %> 
-					<% end %>
-				</div>
-				<div class="footer-social-icon">
-					<% if site_setting?('google') %>
-						<% icon = fa_icon 'google 3x' %>
-						<%= link_to icon, site_setting?('google') %> 
-					<% end %>
-				</div>
-				<div class="footer-social-icon">
-					<% if site_setting?('linkedin') %>
-						<% icon = fa_icon 'linkedin 3x' %>
-						<%= link_to icon, site_setting?('linkedin') %> 
-					<% end %>
-				</div>
+	<div class="container">
+		<div class="row">
 
+			<div class="col-sm-3">
+				<div class="footer-copyright-container">
+					<span> &copy; <%= Time.now.year %></span> - <span>Designed and created by <a href="https://github.com/Chriskaar">Christoffer Skaar</a></span> 
+				</div>
 			</div>
-		</div>
-		<div class="col-sm-1">
+			<div class="col-sm-5">
+				<div class="footer-menu-container">
+					<ul>
+						<li><%= link_to t('menu.contact_us'), articles_path %> </li>
+						<li><%= link_to t('menu.terms'), articles_path %></li>
+						<li><%= link_to t('menu.about_us'), articles_path %></li>
+					</ul>
+				</div>
+			</div>
 
-		</div>
-		<div class="col-sm-4">
-			<div class="footer-copyright-container">
-				<span>Designed and created by <a href="https://github.com/Chriskaar">Christoffer Skaar</a></span> <br>
-				<span> &copy; <%= Time.now.year %></span>
+			<div class="col-sm-4">
+				<div class="footer-social-container">
+					<div class="footer-social-icon">
+						<% if site_setting?('facebook') %>
+							<% icon = fa_icon 'facebook 3x' %>
+							<%= link_to icon, site_setting?('facebook') %> 
+						<% end %>
+					</div>
+					<div class="footer-social-icon">
+						<% if site_setting?('twitter') %>
+							<% icon = fa_icon 'twitter 3x' %>
+							<%= link_to icon, site_setting?('twitter') %> 
+						<% end %>
+					</div>
+					<div class="footer-social-icon">
+						<% if site_setting?('google') %>
+							<% icon = fa_icon 'google 3x' %>
+							<%= link_to icon, site_setting?('google') %> 
+						<% end %>
+					</div>
+					<div class="footer-social-icon">
+						<% if site_setting?('linkedin') %>
+							<% icon = fa_icon 'linkedin 3x' %>
+							<%= link_to icon, site_setting?('linkedin') %> 
+						<% end %>
+					</div>
+
+				</div>
 			</div>
+
+
 		</div>
 	</div>
 </footer>

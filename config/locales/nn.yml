@@ -14,6 +14,7 @@ nn:
     about_us: 'Om oss'
     contact_us: 'Kontakt oss'
     my_page: 'Min side'
+    terms: 'Betingelser'
   page:
     contact:
       title: 'Kontakt oss'
