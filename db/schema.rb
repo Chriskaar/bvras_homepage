@@ -11,12 +11,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218222755) do
+ActiveRecord::Schema.define(version: 20160220224658) do
+
+  create_table "article_categories", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "articles", force: true do |t|
     t.string   "name"
     t.string   "permalink"
     t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "category_id"
+  end
+
+  create_table "department_translations", force: true do |t|
+    t.integer  "department_id", null: false
+    t.string   "locale",        null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.text     "content"
+  end
+
+  add_index "department_translations", ["department_id"], name: "index_department_translations_on_department_id"
+  add_index "department_translations", ["locale"], name: "index_department_translations_on_locale"
+
+  create_table "departments", force: true do |t|
+    t.text     "title"
+    t.text     "content"
+    t.string   "mobile"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "inquiries", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "message"
+    t.integer  "user"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -63,6 +101,16 @@ ActiveRecord::Schema.define(version: 20160218222755) do
     t.string   "google_profile"
     t.string   "facebook_profile"
     t.string   "theme_color"
+    t.string   "adress"
+    t.string   "postcode"
+    t.string   "postal"
+    t.string   "place"
+    t.string   "longitude"
+    t.string   "latitude"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "google"
+    t.string   "linkedin"
   end
 
   create_table "users", force: true do |t|

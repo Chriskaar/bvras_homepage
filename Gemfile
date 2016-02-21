@@ -5,15 +5,21 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-dropbox'
 
-# Style
+# Style aka Prettyfier
 gem 'font-awesome-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '>= 3.2'
 gem 'sass'
 
+# Text Editor
+gem "wysiwyg-rails"
+
 # Locale
 gem 'globalize', '~> 4.0.0'
 gem 'routing-filter'
+
+# Google
+gem 'gmaps4rails'
 
 # SEO
 gem 'meta-tags'

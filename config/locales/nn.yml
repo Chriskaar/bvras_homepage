@@ -13,10 +13,22 @@ nn:
     articles: 'Artikler'
     about_us: 'Om oss'
     contact_us: 'Kontakt oss'
+    my_page: 'Min side'
   page:
     contact:
       title: 'Kontakt oss'
       under_title: 'Så hjelper vi deg innen kort tid!'
+      visit_us: 'Besøk oss'
+      form:
+        title: 'Fyll i din informasjon, så kontakter vi deg'
+        input:
+          name: 'Navn'
+          email: 'E-post'
+          mobile: 'Mobil'
+          message: 'Melding'
+          button: 'Send Melding'
+    categories:
+      all_button: 'Alle Kategorier'
   sessions: 
     sign_in_title: 'Logg inn'
     sign_out_title: 'Logg ut'

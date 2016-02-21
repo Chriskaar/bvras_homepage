@@ -1,0 +1,18 @@
+	<div class="row" style="margin-top:20px">
+		<% @departments.each do |d| %>
+		<div class="col-sm-3">		
+			<div class="contact-info-container">
+				<div class="contact-info-group">
+					<span class="contact-info-title"><%= d.title %></span><br />
+					<span class="contact-info-text"><%= d.content %></span><br />
+				</div>
+				<div class="contact-info-group">
+					<span class="contact-info-phone"><%= fa_icon 'phone 2x', text: d.mobile %></span><br>
+				</div>
+				<div class="contact-info-group">
+				<span class="contact-info-email"><a href="<%= d.email %>"><%= fa_icon 'envelope 2x', text: d.email %></span><br>
+				</div>
+			</div>
+		</div>
+		<% end %>
+	</div>
