@@ -14,9 +14,7 @@
 <header>
 	<div class="header-menu">
 		<div class="logo-box logo-box-effect">
-			<%= image_tag("logo.png") %>
-			<%= params[:controller] %>
-			<%= params[:id] %>
+			<%= image_tag("logo/logo.png") %>
 		</div>
 		<nav class="hor-nav" style="">
 			<ul class="hor-ul">
@@ -44,7 +42,7 @@
 				<li class=""><%= link_to 'Norsk', url_for(:locale => 'nn')  %></li>
 			    <% if admin? %>
 			    	<li role="separator" class="divider"></li>
-			   		<li><%= link_to 'Admin', admin_path %></li>
+			   		<li><%= link_to 'Admin', admin_root_path %></li>
 			   	<% end %>
 			  </ul>
 			</div>
@@ -53,8 +51,14 @@
 
 </header>
 <body style="background-color:#D6D6D6;">
-
-<%= yield %>
+	<div class="container hor-margin">
+		<% flash.each do |key, value| %>
+			<%= content_tag(:div, value, class: flash_class(key)) %>
+		<% end %>
+	</div>
+	<div class="container">
+		<%= yield %>
+	</div>
 
 
 </body>
@@ -70,9 +74,9 @@
 			<div class="col-sm-5">
 				<div class="footer-menu-container">
 					<ul>
-						<li><%= link_to t('menu.contact_us'), articles_path %> </li>
-						<li><%= link_to t('menu.terms'), articles_path %></li>
-						<li><%= link_to t('menu.about_us'), articles_path %></li>
+						<li><%= link_to t('menu.contact_us'), contact_path %> </li>
+						<li><%= link_to t('menu.terms'), page_path('terms') %></li>
+						<li><%= link_to t('menu.about_us'), page_path('about') %></li>
 					</ul>
 				</div>
 			</div>

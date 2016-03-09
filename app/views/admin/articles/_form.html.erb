@@ -1,0 +1,29 @@
+<%= form_for @article, :url => {:controller => "admin/articles", :action => "update"} do |f| %>
+  
+
+  <div class="row">
+    <%= f.text_field :name, class: ' articleTitleInput', placeholder: t('title') %>
+  </div>
+  <div class="row mt10">
+    <%= f.text_area :content, id: 'textEditorAdminArticles' %>
+  </div>
+  <div class="row mt10">
+    <%= f.text_field :tag_list, placeholder: t('tags'), id: 'tags' %>
+  </div>
+  <div class="row mt10">
+    <%= f.submit t('save'), class: 'btn btn-success' %>
+  </div>
+<% end %>
+
+<script>
+    $('#tags').tagsInput({
+      width: '100%'
+    });
+
+    $(function() {
+        $('#textEditorAdminArticles').froalaEditor({
+          heightMin: 500
+        })
+          
+    });
+</script>

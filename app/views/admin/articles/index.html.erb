@@ -1,0 +1,21 @@
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th><%= t('date_created') %></th>
+			<th><%= t('name') %></th>
+			<th><%= t('action') %></th>
+		</tr>
+	</thead>
+<% @articles.each do |article| %>
+	<tr>
+		<td><%= article.id %></td>
+		<td><%= article.created_at %></td>
+		<td><%= article.name %></td>
+		<td>
+			<%= link_to 'Edit', edit_admin_article_path(article), class: 'btn btn-default btn-sm' %>
+			<%= link_to 'Del', admin_article_path(article), method: :delete, data: {confirm: t('confirm.sure?')}, class: 'btn btn-danger btn-sm' %>
+		</td>
+	</tr>
+<% end %>
+</table>

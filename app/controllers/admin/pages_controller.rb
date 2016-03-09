@@ -1,2 +1,7 @@
-class Admin::PageController < ApplicationController
+class Admin::PagesController < ApplicationController
+	layout 'admin'
+
+	def index
+
+	end
 end

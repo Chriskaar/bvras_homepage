@@ -11,14 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160220224658) do
+ActiveRecord::Schema.define(version: 20160306214645) do
 
-  create_table "article_categories", force: true do |t|
-    t.string   "name"
-    t.string   "description"
+  create_table "article_translations", force: true do |t|
+    t.integer  "article_id", null: false
+    t.string   "locale",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.text     "content"
   end
+
+  add_index "article_translations", ["article_id"], name: "index_article_translations_on_article_id"
+  add_index "article_translations", ["locale"], name: "index_article_translations_on_locale"
 
   create_table "articles", force: true do |t|
     t.string   "name"
@@ -27,7 +32,35 @@ ActiveRecord::Schema.define(version: 20160220224658) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "category_id"
+    t.string   "tags"
   end
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categorizations", force: true do |t|
+    t.integer  "product_id"
+    t.integer  "category_id"
+    t.integer  "article_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "category_translations", force: true do |t|
+    t.integer  "category_id", null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.string   "description"
+  end
+
+  add_index "category_translations", ["category_id"], name: "index_category_translations_on_category_id"
+  add_index "category_translations", ["locale"], name: "index_category_translations_on_locale"
 
   create_table "department_translations", force: true do |t|
     t.integer  "department_id", null: false
@@ -57,7 +90,29 @@ ActiveRecord::Schema.define(version: 20160220224658) do
     t.integer  "user"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  create_table "meta", force: true do |t|
+    t.string   "controller"
+    t.string   "title"
+    t.string   "description"
+    t.string   "keywords"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "metum_translations", force: true do |t|
+    t.integer  "metum_id",    null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.text     "description"
+  end
+
+  add_index "metum_translations", ["locale"], name: "index_metum_translations_on_locale"
+  add_index "metum_translations", ["metum_id"], name: "index_metum_translations_on_metum_id"
 
   create_table "page_translations", force: true do |t|
     t.integer  "page_id",    null: false
@@ -112,6 +167,26 @@ ActiveRecord::Schema.define(version: 20160220224658) do
     t.string   "google"
     t.string   "linkedin"
   end
+
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+
+  create_table "tags", force: true do |t|
+    t.string  "name"
+    t.integer "taggings_count", default: 0
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

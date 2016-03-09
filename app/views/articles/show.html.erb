@@ -1,43 +1,54 @@
-<div class="container hor-margin cs-container">
-	<div class="row">
-		<div class="col-sm-12">
-				<p id="notice"><%= notice %></p>
-			<div class="row">
-				<div class="col-sm-12">
-					<h2><%= @article.name %></h2>
-				</div>
+<div class="row">
+	<div class="col-sm-12">
+			<p id="notice"><%= notice %></p>
+		<div class="row">
+			<div class="col-sm-12">
+				<h2><%= @article.name %></h2>
 			</div>
-			<div class="row">
-				<div class="col-sm-12">
-					<span class="article-category-span">
-						<% if @article.category_id %>
-							Kategori: <%= @category.name %>
-						<% end %>
-					</span>
-				</div>
-			</div>	
-			<div class="row">
-				<div class="col-sm-12">
-					<p><%= @article.content %></p>
-				</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<span class="article-category-span">
+					<% if @article.category_id %>
+						Kategori: <%= @category.name %>
+					<% end %>
+				</span>
 			</div>
-
-
+		</div>	
+		<div class="row">
+			<div class="col-sm-12">
+				<p><%= raw(@article.content) %></p>
+			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-12">
-			<small class="text-muted"><%= @article.created_at %></small>
-		</div>
-	</div>
-	<div class="row mt20">
-		<div class="col-sm-12">
-			<% if admin? %>
-			<%= link_to 'Edit', edit_admin_article_path(@article) %> |
-			<% end %>
-			<%= link_to 'Back', articles_path %>
-		</div>
-	</div>
 
 
+	</div>
 </div>
+
+<div class="row">
+	<div class="col-sm-12">
+		<% if @article.tag_list %>
+		<small class="">
+			<%= raw @article.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
+		</small>
+		<% else %>
+		<span class="text-muted">No tags exists</span>
+		<% end %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-12">
+		<small class="text-muted"><%= @article.created_at %></small>
+	</div>
+</div>
+<div class="row mt20">
+	<div class="col-sm-12">
+		<% if admin? %>
+		<%= link_to 'Edit', edit_admin_article_path(@article) %> |
+		<% end %>
+		<%= link_to 'Back', articles_path %>
+	</div>
+</div>
+
+

@@ -98,19 +98,32 @@ header {
 
 .hor-nav .hor-ul li {
 	float: left;
+	display:inline-block;
 }
 .hor-nav .hor-ul li a {
 	font-family: 'Exo 2';
 	display:inline-block;
-	padding: 16px 20px;
+	padding: 14px 20px;
 	color:black;
-	&:hover {
-		background-color: #D9D9D9;
-	}
 }
-
+.hor-nav .hor-ul li:after {
+	content: '';
+	display: block;
+	margin: auto;
+	height: 3px;
+	width: 0px;
+	background: transparent;
+	transition: width .5s ease, background-color .5s ease;
+}
+.hor-nav .hor-ul li:hover:after {
+	width:100%;
+	background:#008AB8;
+}
 .hor-nav .active {
-	background-color: #008AB8;
+	border-bottom:3px solid #008AB8;
+}
+.hor-nav .active:hover {
+	border:none;
 }
 .right-menu {
 	float:right;

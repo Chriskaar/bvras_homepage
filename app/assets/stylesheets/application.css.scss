@@ -1,10 +1,16 @@
 @import "*";
+@import "admin/*";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "jquery.tagsinput";
 @import "font-awesome";
 @import url('https://fonts.googleapis.com/css?family=Exo+2');
 @import "froala_editor.min";
 @import "froala_style.min";
+
+.form-control {
+	color:black;
+}
 
 a,
 a:hover,

@@ -11,7 +11,7 @@
     sign_in(resource_name, resource)
     yield resource if block_given?
     if resource.admin
-    	redirect_to admin_path
+    	redirect_to admin_root_path
     else
     	respond_with resource, location: after_sign_in_path_for(resource)
   	end

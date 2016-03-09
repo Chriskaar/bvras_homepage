@@ -14,7 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require underscore
+//= require jquery.tagsinput
 //= require gmaps/google
 //= require bootstrap-sprockets
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .
 //= require froala_editor.min

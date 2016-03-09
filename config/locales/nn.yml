@@ -1,4 +1,20 @@
 nn:
+  name: 'Navn'
+  author: 'Forfatter'
+  date_created: 'Dato laget'
+  action: 'Handling'
+  save: 'Lagre'
+  title: 'Tittel'
+  tags: 'Tags'
+  confirm:
+    sure?: 'Er du sikker?'
+  notice: 
+    success:
+      article_update: 'Artikkelen er nå oppdatert'
+      article_delete: 'Artikkelen er nå slettet!'
+    error:
+      article_update: 'Det skjedde et feil! Prøv igjen.'
+      article_delete: 'Vi prøvde å slette artikkelen...Men det gikk bare ikke!'
   site_meta:
     home:
       title: 'Hjem'
@@ -46,3 +62,19 @@ nn:
     button:
       sign_in: 'Logg inn'
       sign_out: 'Logg ut'
+  admin:
+    page:
+      dashboard: 
+        title: 'Dashboard'
+      users: 
+        title: 'Brukere'
+      pages: 
+        title: 'Sider'
+      articles: 
+        title: 'Artikler'
+      design: 
+        title: 'Design'
+      inquiries:
+        title: 'Henvendelser'
+      settings: 
+        title: 'Innstillinger'
